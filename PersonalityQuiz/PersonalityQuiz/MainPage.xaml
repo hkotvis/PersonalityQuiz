@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PersonalityQuiz"
+             x:Class="PersonalityQuiz.MainPage">
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10">
+            <!-- Place new controls here -->
+            <Label Text="Which character from  THE FLASH  are you?" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Label Text="Name"></Label>
+            <Entry Text="{Binding Name}"  Placeholder="Your Name"></Entry>
+
+            <!--   <Label Text="Age"></Label>
+            <Entry Text="{Binding Age}" Placeholder="Your Age"></Entry>
+            <Label Text="1. Which metahuman super power would you want to have the most?"></Label>
+
+            <Picker x:Name="SuperPowerPicker" SelectedIndex="{Binding SuperPower}" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Speed</x:String>
+                    <x:String>Teleportation</x:String>
+                    <x:String>Giving Anyone 'The Chills'</x:String>
+                    <x:String>None</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="2. If you couldn't be out fighting crime, what would you be doing?"></Label>
+
+            <Picker x:Name="HobbyPicker" SelectedIndex="{Binding Hobby}" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Reading a good book</x:String>
+                    <x:String>Writing news stories</x:String>
+                    <x:String>Math equations on my whiteboard in my lab</x:String>
+                    <x:String>Curing cancer</x:String>
+                </Picker.Items>
+            </Picker> -->
+            <Button Text="Find Out!" Clicked="goToResults"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
