@@ -1,23 +1,23 @@
 ﻿//using PersonalityQuiz.ViewModels;
+using PersonalityQuiz.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PersonalityQuiz
 {
     public partial class MainPage : ContentPage
     {
+        QuizViewModel _viewModel;//
+        
         public MainPage()
         {
             InitializeComponent();
-           // BindingContext = new QuizViewModel();
+            _viewModel = new QuizViewModel();//
+            BindingContext = _viewModel;//
         }
-        private async void goToResults(object sender, EventArgs e)
+        private void goToResults(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Results());
+            Navigation.PushAsync(new Results());
         }
     }
 }

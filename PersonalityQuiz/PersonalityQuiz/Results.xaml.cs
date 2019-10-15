@@ -1,20 +1,26 @@
-﻿using System;
+﻿using PersonalityQuiz.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace PersonalityQuiz
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Results : ContentPage
 	{
-		public Results ()
+       QuizViewModel _viewModel;
+        public Results ()
 		{
-			InitializeComponent ();
-		}
-	}
+			InitializeComponent();
+
+        }
+        void calc(object sender, EventArgs e)
+        {
+          _viewModel = new QuizViewModel();
+         // character.Text = _viewModel.Calculate();
+        }
+    }
 }
