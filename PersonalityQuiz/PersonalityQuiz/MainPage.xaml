@@ -15,121 +15,42 @@
     </ContentPage.Resources>
     <ScrollView>
         <StackLayout Padding="5" Spacing="5">
-            <!-- Place new controls here 
-            <Label Text="Which character from  THE FLASH  are you?" 
+
+            <StackLayout.BindingContext>
+                <local1:QuizViewModel />
+            </StackLayout.BindingContext>
+
+
+            <Label Text="{Binding LabelText}" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
-            <Entry Text="{Binding Name}"  Placeholder="Your Name" FontSize="Small"></Entry>
-            <Entry Text="{Binding Age}" Placeholder="Your Age" FontSize="Small"></Entry>
-            <Label Text="1) Which metahuman super power would you want to have the most?" FontSize="Small"></Label>
-         
-            <Picker x:Name="SuperPowerPicker" SelectedIndex="{Binding SuperPower}" HorizontalOptions="FillAndExpand" FontSize="Small">
-                <Picker.Items>
-                    <x:String>Speed</x:String>
-                    <x:String>Teleportation</x:String>
-                    <x:String>Giving 'The Chills'</x:String>
-                    <x:String>The most ordinary power possible</x:String>
-                </Picker.Items>
-            </Picker>
+           VerticalOptions="CenterAndExpand"
+                IsVisible="{Binding QuestionVisible}" />
+            <Button Text="{Binding BAAns}"
+                Command="{Binding BACommand}"
+                IsVisible="{Binding QuestionVisible}" />
+            <Button Text="{Binding CRAns}"
+                Command="{Binding CRCommand}"
+                IsVisible="{Binding QuestionVisible}" />
+            <Button Text="{Binding CSAns}"
+                Command="{Binding CSCommand}"
+                IsVisible="{Binding QuestionVisible}" />
+            <Button Text="{Binding IWAAns}"
+                Command="{Binding IWACommand}"
+                IsVisible="{Binding QuestionVisible}" />
 
-            <Label Text="2) If you couldn't be out fighting crime, what would you be doing?" FontSize="Small"></Label>
-
-            <Picker x:Name="HobbyPicker" SelectedIndex="{Binding Hobby}" HorizontalOptions="FillAndExpand" FontSize="Small">
-                <Picker.Items>
-                    <x:String>Reading a good book</x:String>
-                    <x:String>Writing news stories</x:String>
-                    <x:String>Math equations on a whiteboard</x:String>
-                    <x:String>Curing cancer</x:String>
-                </Picker.Items>
-            </Picker>   -->
-            <!-- 
-            <Button x:Name="GoToResults" Text="Find Out!" Clicked="goToResults"></Button>
-
-           " <Label Text="Which character from  THE FLASH  are you?" 
+            <!--<Label Text="{Binding CharacterName}" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
-            <Label Text="Name"/>
-            <Entry Text="{Binding Name}" Placeholder="Full Name" FontSize="Small"/>
-            <Label Text="Age"/>
-            <Entry Text="{Binding Age} Placeholder="Age" FontSize="Small"/>
-            <Label Text="{Binding DisplayMessage}"/>
-            <Label x:Name="myLabel" 
-               Text="{Binding Question}" 
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" 
-               FontSize="Small"/>
-            <Button x:Name="button"
-                Text="{Binding Answer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small" />
-            <Button x:Name="button1"
-                Text="{Binding Answer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small" />
-            <Button x:Name="button2"
-                Text="{Binding Answer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small" />
-            <Button x:Name="button3"
-                Text="{Binding Answer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small" />
-            -->
+           VerticalOptions="CenterAndExpand"
+                IsVisible="{Binding ResultsVisible}" />-->
+            <Image Source="{Binding CharacterName}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   IsVisible="{Binding ResultsVisible}" />
+            <Button Text="Finish"
+                Command="{Binding ResultsBtnCommand}"
+                IsVisible="{Binding ResultsVisible}" />
 
-            <Label Text="Which character from  THE FLASH  are you?" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
-            <Label Text="Name"/>
-            <Entry Text="{Binding Name}" Placeholder="Full Name" FontSize="Small"/>
-            <Label Text="Age"/>
-            <Entry Text="{Binding Age}" Placeholder="Age" FontSize="Small"/>
-
-            <Label x:Name="question" 
-               Text="{Binding Question}" 
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" 
-               FontSize="Small" />
-
-            <Button x:Name="chewyButton"
-                IsVisible="{Binding Visible}"
-                Text="{Binding kAnswer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small"
-                />
-            <Button x:Name="skywalkerButton"
-                IsVisible="{Binding Visible}"
-                Text="{Binding cAnswer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small"
-                />
-            <Button x:Name="vaderButton"
-                IsVisible="{Binding Visible}"
-                Text="{Binding iAnswer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small"
-                />
-            <Button x:Name="LeiaButton"
-                IsVisible="{Binding Visible}"
-                Text="{Binding bAnswer}"
-                Command="{Binding TallyCommand}"
-                FontSize="Small"
-                />
-            <Label x:Name="ll" 
-               Text="You are..." 
-                   IsVisible="{Binding Picture}"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" 
-               FontSize="Medium" />
-
-            <Image Source="{Binding PhotoSrc}"
-               HeightRequest="600"
-               IsVisible="{Binding Picture}"
-               />
-            <Label x:Name="character" 
-               Text="{Binding Character}" 
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" 
-               FontSize="Large" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
+         
