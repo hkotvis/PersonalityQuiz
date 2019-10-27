@@ -19,8 +19,12 @@
             <StackLayout.BindingContext>
                 <local1:QuizViewModel />
             </StackLayout.BindingContext>
-
-
+            <Label Text="Which character from  THE FLASH  are you?" 	
+                              HorizontalOptions="Center"	
+                              VerticalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"
+                                IsVisible="{Binding QuestionVisible}"/>
+            <Entry Text="{Binding Name}"  Placeholder="Your Name" FontSize="Small" IsVisible="{Binding QuestionVisible}"></Entry>
+            <Entry Text="{Binding Age}" Placeholder="Your Age" FontSize="Small" IsVisible="{Binding QuestionVisible}"></Entry>
             <Label Text="{Binding LabelText}" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand"
@@ -38,6 +42,9 @@
                 Command="{Binding IWACommand}"
                 IsVisible="{Binding QuestionVisible}" />
 
+
+            <!--<ListView ItemsSource="{Binding MySource}"  IsVisible="{Binding QuestionVisible}">
+            </ListView>-->
             <!--<Label Text="{Binding CharacterName}" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand"
@@ -46,9 +53,6 @@
                    HorizontalOptions="Center"
                    VerticalOptions="CenterAndExpand"
                    IsVisible="{Binding ResultsVisible}" />
-            <Button Text="Finish"
-                Command="{Binding ResultsBtnCommand}"
-                IsVisible="{Binding ResultsVisible}" />
 
         </StackLayout>
     </ScrollView>
